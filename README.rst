@@ -1,17 +1,17 @@
 ===============================
-dev-stockXchange
+XIXI
 ===============================
 
-A practice project
+Personal website, in name of my girl
 
 
 Quickstart
 ----------
 
 First, set your app's secret key as an environment variable. For example,
-add the following to ``.bashrc`` or ``.bash_profile``.
+add the following to ``.zshrc`` or ``.profile``.
 
-.. code-block:: bash
+.. code-block:: zsh
 
     export APP_SECRET='something-really-secret'
 
@@ -23,8 +23,8 @@ environment variables ::
 
 Then run the following commands to bootstrap your environment ::
 
-    git clone https://github.com/defbobo/app
-    cd app
+    git clone https://github.com/defbobo/xixi
+    cd xixi
     pip install -r requirements/dev.txt
     bower install
     flask run
