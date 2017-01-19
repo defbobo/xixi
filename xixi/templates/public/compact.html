@@ -1,0 +1,112 @@
+{% autoescape false %}
+<html><head>
+  <meta charset="utf-8">
+  <title>{{ r.name }}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/css/compact-html.css">
+</head>
+
+<body>
+<main>
+  <section id="info">
+    <h1 class="name">{{ r.name }}</h1>
+    <div id="contact">
+      <div style="display:inline-block;width:25%">
+        {% if r.contact.email %}
+          <span class="fa fa-envelope fa-fw"></span><div class="email"><a href="mailto:{{ r.contact.email }}">{{ r.contact.email }}</a></div>
+        {% endif %}
+        {% if r.contact.phone %}
+          <span class="fa fa-phone fa-fw"></span><div class="phone">{{ r.contact.phone }}</div>
+        {% endif %}
+        {% if r.location.address %}
+          <span class="fa fa-home fa-fw"></span><p style="display:inline-block;">{{ r.location.address|replace("\n", "<br>")}}</p>
+        {% endif %}
+      </div>
+      <div style="display:inline-block;width:20%">
+        {% if r.contact.website %}
+          <div class="website">
+            <span class="fa fa-compass fa-fw"></span><a href="{{ r.contact.website }}">{{ r.contact.website }}</a>
+          </div>
+        {% endif %}
+        {% for network in r.social %}
+          <div class="{{ network.label }}">
+            <span class="{{ network.icon }} fa-fw"></span><p style="display:inline-block;"><a href="{{ network.url }}">{{ network.label }}</a></p>
+          </div>
+        {% endfor %}
+      </div>
+      <div style="display:inline-block;width:50%;vertical-align: top;">
+        {% if r.info.brief %}
+          {{ r.info.brief }}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+{% if r.employment %}
+  <section id="employment">
+  <header>
+    <span class="fa fa-building fa-lg"></span>
+    <h2>Employment</h2>
+  </header>
+  {% for job in r.employment.history %}
+    <div>
+      <h3><em>{{ job.position }}</em>, {% if job.url %}<a href="{{ job.url }}">{% endif %}{{ job.employer }}{% if job.url %}</a>{% endif %}</h3>
+      <span class="tenure">{{ job.start if job.start }}{{ '—' if job.start and job.end }}{{ job.end if job.end }}</span>
+      {% if job.summary %}<p>{{ job.summary }}</p>{% endif %}
+      {% if job.highlights %}
+        <ul>{% for highlight in job.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </section>
+{% endif %}
+
+{% if r.skills %}
+  <section id="skills">
+    <header>
+      <span class="fa fa-code fa-lg"></span>
+      <h2>Skills</h2>
+    </header>
+    <div class="columnwrapper">
+    {% for column in r.skills.sets|slice(2) %}
+      <div class="column-{{ loop.index }}">
+        {% for item in column %}
+          <div>
+            <div class="skill-set">
+              <strong>{{ item.name }}</strong>
+            </div>
+            <ul>
+              {% for skill in item.skills %}<li>{{ skill }}</li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% if r.education %}
+  <section id="education">
+    <header>
+      <span class="fa fa-mortar-board fa-lg"></span>
+      <h2>Education</h2>
+    </header>
+    {% for ed in r.education.history %}
+      <div>
+        <h3><em>{{ ed.title ~ ', 'if ed.title }}</em>{{ ed.institution }}</h3>
+        <span class="tenure">{{ ed.start if ed.start }}{{ '—' if ed.start and ed.end }}{{ ed.end if ed.end }}</span>
+        <p>{{ ed.summary if ed.summary }}</p>
+        {% if ed.highlights %}
+          <ul>{% for highlight in ed.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}
+
+</main>
+{% include 'google-analytics.html' ignore missing %}
+</body>
+</html>
+{% endautoescape %}
