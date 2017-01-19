@@ -2,10 +2,10 @@
 """The app module, containing the app factory function."""
 from flask import Flask, render_template
 
-from app import commands, public, user
-from app.assets import assets
-from app.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate
-from app.settings import ProdConfig
+from xixi import commands, public, user
+from xixi.assets import assets
+from xixi.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate
+from xixi.settings import ProdConfig
 
 
 def create_app(config_object=ProdConfig):
@@ -62,7 +62,7 @@ def register_shellcontext(app):
         return {
             'db': db,
             'User': user.models.User,
-            'Order': xchange.models.Order}
+            }
 
     app.shell_context_processor(shell_context)
 

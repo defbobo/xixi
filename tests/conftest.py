@@ -4,9 +4,9 @@
 import pytest
 from webtest import TestApp
 
-from app.app import create_app
-from app.database import db as _db
-from app.settings import TestConfig
+from xixi.app import create_app
+from xixi.database import db as _db
+from xixi.settings import TestConfig
 
 from .factories import UserFactory
 
