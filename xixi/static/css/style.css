@@ -23,7 +23,7 @@ textarea {
 }
 
 header {
-  background-image: url(../../static/images/header-bg.jpg);
+  background-image: url(../../static/images/intro-bg.jpg);
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
@@ -118,7 +118,7 @@ header .intro-divider {
 
 footer {
   margin-top: 45px;
-  padding-top: 5px;
+  padding-top: 2em;
   border-top: 1px solid #eaeaea;
   color: #999999;
 }
