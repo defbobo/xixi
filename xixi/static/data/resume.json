@@ -1,0 +1,140 @@
+{
+
+  "name": "Wu Xiaobo",
+
+  "info": {
+    "label": "",
+    "characterClass": "",
+    "brief": "Automatic QA tester and python developer, Prefers elegant solutions to immediate solutions whenever possible; likes working with teams that encourage curiosity and value creativity.",
+    "image": ""
+  },
+
+  "contact": {
+    "website": "http://ruihang.xyz",
+    "phone": "159-2129-3134",
+    "email": "defbobo@gmail.com",
+    "other": [
+    ]
+  },
+
+  "location": {
+    "address": "Pudong",
+    "city": "Shanghai",
+    "code": "200126",
+    "country": "China"
+  },
+
+  "social": [
+
+    {
+      "label": "GitHub",
+      "network": "GitHub",
+      "user": "defbobo",
+      "url": "https://github.com/defbobo",
+      "icon": "fa fa-github"
+    },
+    {
+      "label": "Twitter",
+      "network": "Twitter",
+      "user": "defbobo",
+      "url": "https://twitter.com/defbobo",
+      "icon": "fa fa-twitter"
+    },
+    {
+      "label": "LinkedIn",
+      "network": "LinkedIn",
+      "url": "https://www.linkedin.com/in/defbobo",
+      "icon": "fa fa-linkedin"
+    }
+  ],
+
+  "employment": {
+
+    "summary": "",
+
+    "history": [
+      {
+        "employer": "ALCATEL-LUCENT",
+        "position": "Senior SIT Engineer",
+        "start": "May 2006",
+        "end": "Present",
+        "summary": "Automatic functional tester, tool-builder, administrator of NEAT platform.",
+        "highlights": [
+          "Developed tools with python to atomically setup test environment on VNC servers, which is used by more than 20 engineers to simplify test bench set-up.",
+
+          "Developed automation functional test library base on NEAT & APT platform, the library is widely used by team members.",
+
+          "Work as a test engineer of OMSN Network Element and 1350OMS Network Manager system, and has been in charge of more than 100 features’ functional test which are world widely used."
+
+        ]
+      }
+    ]
+
+  },
+
+  "education": {
+
+    "summary": "",
+
+    "level": "degree",
+
+    "degree": "Bachelor of Electrical Engineering",
+
+    "history": [
+      {
+        "institution": "ORACLE",
+        "title": "OCP",
+        "url": "http://oracle.sjtuce.net",
+        "start": "2014",
+        "end": "2014",
+        "summary": "Master oracle database with single instance and RAC configuration"
+      },
+      {
+        "institution": "Southeast University",
+        "start": "2002",
+        "end": "2006"
+      }
+    ]
+
+  },
+
+  "skills": {
+
+    "sets": [
+      {
+        "name": "Python Data Science Stack",
+        "level": "",
+        "skills": [
+          "pandas",
+          "numpy",
+          "matplotlib"
+        ]
+      },
+      {
+        "name": "Web Design",
+        "skills": [
+          "Flask",
+          "HTML + CSS"
+        ]
+      },
+      {
+        "name": "Database Management",
+        "level": "",
+        "skills": [
+          "ORACLE",
+          "MySQL"
+        ]
+      },
+      {
+        "name": "*nix / command line",
+        "level": "",
+        "skills": [
+          "file processing / ETL / pipelining",
+          "automation",
+          "system administration",
+          "git versioning"
+        ]
+      }
+    ]
+  }
+}

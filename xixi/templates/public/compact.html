@@ -1,12 +1,9 @@
-{% autoescape false %}
-<html><head>
-  <meta charset="utf-8">
-  <title>{{ r.name }}</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="static/css/compact-html.css">
-</head>
 
-<body>
+{% extends "layout.html" %}
+
+
+{% block content %}
+{% autoescape false %}
 <main>
   <section id="info">
     <h1 class="name">{{ r.name }}</h1>
@@ -110,3 +107,4 @@
 </body>
 </html>
 {% endautoescape %}
+{% endblock %}
