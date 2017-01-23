@@ -3,9 +3,13 @@ sudo: false  # http://docs.travis-ci.com/user/migrating-from-legacy/
 language: python
 python:
   - 2.7
-  - 3.3
   - 3.4
   - 3.5
-install: pip install -r requirements/dev.txt
-before_script: flask lint
-script: flask test
+  - 3.6
+install:
+  - "pip install -r requirements/dev.txt"
+  - "pip install coveralls"
+script: 
+  - "py.test --cov=flaskbb --cov-report=term-missing tests" 
+after_success:
+  - coveralls
