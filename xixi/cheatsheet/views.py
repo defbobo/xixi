@@ -11,10 +11,10 @@ def home():
     return render_template('cheatsheets/home.html')
 
 
-@blueprint.route('/<string:id>', methods=['GET'])
-def get_cheatsheet(id):
-    """Return cs page by id."""
+@blueprint.route('/<string:page>', methods=['GET'])
+def get_cheatsheet(page):
+    """Return cs page by page."""
     try:
-        return render_template('cheatsheets/{0}.html'.format(id))
+        return render_template('cheatsheets/{0}.html'.format(page))
     except Exception:
         abort(404)
