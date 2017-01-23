@@ -47,6 +47,46 @@ In your production environment, make sure the ``FLASK_DEBUG`` environment
 variable is unset or is set to ``0``, so that ``ProdConfig`` is used.
 
 
+Gunicorn
+--------
+
+To deploy with gunicorn, run ::
+
+    cd /path/to/autoapp.py
+    gunicorn -w 4 -b 127.0.0.1:8000 autoapp:app &
+
+
+Nginx
+-----
+
+To run server behind nginx HTTP proxy, run ::
+
+    cd /etc/nginx/sites-available
+    vi default
+
+A simple nginx configuration ::
+
+    server {
+        listen 80;
+
+        server_name ruihang.site;
+        client_max_body_size  4M;
+
+        access_log  /var/log/nginx/access.log;
+        error_log  /var/log/nginx/error.log;
+
+        location / {
+            proxy_pass         http://127.0.0.1:8000/;
+            proxy_redirect     off;
+
+            proxy_set_header   Host                 $host;
+            proxy_set_header   X-Real-IP            $remote_addr;
+            proxy_set_header   X-Forwarded-For      $proxy_add_x_forwarded_for;
+            proxy_set_header   X-Forwarded-Proto    $scheme;
+        }
+    }
+
+
 Shell
 -----
 
