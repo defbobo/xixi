@@ -10,7 +10,7 @@ click>=5.0
 
 # Database
 Flask-SQLAlchemy==2.1
-psycopg2==2.6.2
+MySQL-python==1.2.5
 SQLAlchemy==1.1.4
 
 # Migrations
@@ -37,3 +37,9 @@ Flask-Caching>=1.0.0
 
 # Debug toolbar
 Flask-DebugToolbar==0.10.0
+
+# Ipython
+ipython==5.1.0
+
+# Gunicorn
+gunicorn==19.6.0
