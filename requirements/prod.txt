@@ -41,5 +41,3 @@ Flask-DebugToolbar==0.10.0
 # Ipython
 ipython==5.1.0
 
-# Gunicorn
-gunicorn==19.1.1
