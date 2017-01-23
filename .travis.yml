@@ -10,6 +10,6 @@ install:
   - "pip install -r requirements/dev.txt"
   - "pip install coveralls"
 script: 
-  - "py.test --cov=flaskbb --cov-report=term-missing tests" 
+  - py.test --cov=xixi --cov-report=term-missing tests 
 after_success:
   - coveralls
