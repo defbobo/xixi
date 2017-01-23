@@ -7,7 +7,7 @@ from xixi.extensions import login_manager
 from xixi.public.forms import LoginForm
 from xixi.user.forms import RegisterForm
 from xixi.user.models import User
-from xixi.utils import flash_errors
+from xixi.utils import flash_errors, read_resume
 
 blueprint = Blueprint('public', __name__, static_folder='../static')
 
@@ -59,5 +59,4 @@ def register():
 @blueprint.route('/about/')
 def about():
     """About page."""
-    form = LoginForm(request.form)
-    return render_template('public/about.html', form=form)
+    return render_template('public/compact.html', r=read_resume('xixi/static/data/resume.json'))
