@@ -1,8 +1,8 @@
 ===============================
-XIXI
+XIXI (flask R0.12)
 ===============================
 
-Personal website, in name of my girl
+Personal flask practice website, in name of my girl
 
 
 Quickstart
@@ -72,8 +72,8 @@ A simple nginx configuration ::
         server_name ruihang.site;
         client_max_body_size  4M;
 
-        access_log  /var/log/nginx/access.log;
-        error_log  /var/log/nginx/error.log;
+        access_log  /var/log/nginx/access.cms.ruihang.log;
+        error_log  /var/log/nginx/error.cms.ruihang.log;
 
         location / {
             proxy_pass         http://127.0.0.1:8000/;
@@ -84,7 +84,16 @@ A simple nginx configuration ::
             proxy_set_header   X-Forwarded-For      $proxy_add_x_forwarded_for;
             proxy_set_header   X-Forwarded-Proto    $scheme;
         }
+
+        location /static {
+            alias /var/www/xixi/xixi/static;
+        }
+
+        location /robots.txt {
+            alias /var/www/xixi/xixi/static/robots.txt
+        }
     }
+
 
 
 Shell
