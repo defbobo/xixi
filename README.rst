@@ -2,6 +2,12 @@
 XIXI (flask R0.12)
 ===============================
 
+.. image:: https://travis-ci.org/defbobo/xixi.svg?branch=master
+    :target: https://travis-ci.org/defbobo/xixi
+
+.. image:: http://codecov.io/github/defbobo/xixi/coverage.svg?branch=master
+    :target: http://codecov.io/github/defbobo/xixi?branch=master
+
 Personal flask practice website, in name of my girl
 
 
